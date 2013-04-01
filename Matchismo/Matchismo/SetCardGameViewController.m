@@ -74,6 +74,7 @@
             setCardView.shading = setCard.shading;
             
             setCardView.faceUp = setCard.isFaceUp;
+            setCardView.alpha = setCard.isUnplayable ? 0.3 : 1.0;
             
         }
     }
@@ -119,10 +120,7 @@
 - (void)updateUI
 {
 
-    
-    [self.cardCollectionView reloadData];
-   [self.selectedCardview reloadData];
-    
+    [self.selectedCardview reloadData];
     
     for (UICollectionViewCell *cell in [self.cardCollectionView visibleCells]) {
         NSIndexPath *indexPath  = [self.cardCollectionView indexPathForCell:cell];
@@ -159,19 +157,22 @@
     self.gameResult = nil;
     self.addCardButton.enabled = YES;
     self.addCardLabel.text = @"add 3 more";
+    [self.cardCollectionView reloadData];
     [self updateUI];
 }
 
 
 - (IBAction)addThreeCards:(UIButton *)sender
 {
+    NSMutableArray *indexPaths = [NSMutableArray arrayWithCapacity:3];
+    
     for (int i = 0; i < 3; i++) {
         Card *card = [self.cardDeck drawRandomCard];
         
         if (card) {
             [self.game.cards addObject:card];
-            [self updateUI];
-            
+    
+        
             UICollectionViewCell *cell = [[self.cardCollectionView visibleCells] lastObject];
             
             NSIndexPath *indexPath = [self.cardCollectionView indexPathForCell:cell];
@@ -179,8 +180,7 @@
             NSIndexPath *anotherindexPath = [NSIndexPath indexPathForItem:[self.game.cards count]-1
                                                                 inSection:indexPath.section];
             
-            [self.cardCollectionView scrollToItemAtIndexPath:anotherindexPath atScrollPosition:UICollectionViewScrollPositionTop animated:YES];
-            
+            [indexPaths addObject:anotherindexPath];
         } else
         {
             self.addCardButton.enabled = NO;
@@ -188,6 +188,11 @@
             break;
         }
     }
+    
+    [self.cardCollectionView insertItemsAtIndexPaths:indexPaths];
+    [self.cardCollectionView scrollToItemAtIndexPath:[indexPaths lastObject] atScrollPosition:UICollectionViewScrollPositionTop animated:YES];
+    
+    
 }
 
 - (IBAction)flipCard:(UITapGestureRecognizer *)gesture
@@ -197,12 +202,36 @@
     
     if (indexPath) {
         [self.game flipCardAtIndex:indexPath.item];
-        [self.game removeUnplayableCards];
         [self updateUI];
+        [self deleteUnplayableCardView];
         self.gameResult.score = self.game.score;
     
     }
 }
+
+- (void)deleteUnplayableCardView
+{
+    NSMutableArray *indexPaths = [NSMutableArray arrayWithCapacity:3];
+    for (SetGameCollectionViewCell *cell in [self.cardCollectionView visibleCells])
+    {
+        if (cell.setCardView.isFaceUp)
+        {
+            NSIndexPath *indexPath = [self.cardCollectionView indexPathForCell:cell];
+            
+            [indexPaths addObject:indexPath];
+        }
+    }
+    
+    
+    if ([indexPaths count] == 3) {
+        
+        [self.game removeUnplayableCards];
+        [self.cardCollectionView deleteItemsAtIndexPaths:indexPaths];
+    }
+        
+}
+
+
 
 - (IBAction)deselectedCard:(UITapGestureRecognizer *)sender
 {
