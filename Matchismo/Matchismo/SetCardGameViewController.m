@@ -138,6 +138,8 @@
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
     self.gameResult.gameName = self.gameName;
     self.gameResult.score = self.game.score;
+    
+    [self deleteUnplayableCardView];
 }
 
 - (NSString *)cellIdentifier
@@ -171,17 +173,13 @@
         
         if (card) {
             [self.game.cards addObject:card];
-    
-        
-            UICollectionViewCell *cell = [[self.cardCollectionView visibleCells] lastObject];
             
-            NSIndexPath *indexPath = [self.cardCollectionView indexPathForCell:cell];
+            NSIndexPath *indexPath = [NSIndexPath indexPathForItem:[self.game.cards count]-1
+                                                                inSection:0];
             
-            NSIndexPath *anotherindexPath = [NSIndexPath indexPathForItem:[self.game.cards count]-1
-                                                                inSection:indexPath.section];
-            
-            [indexPaths addObject:anotherindexPath];
-        } else
+            [indexPaths addObject:indexPath];
+        }
+        else
         {
             self.addCardButton.enabled = NO;
             self.addCardLabel.text = @"No card";
@@ -189,10 +187,11 @@
         }
     }
     
-    [self.cardCollectionView insertItemsAtIndexPaths:indexPaths];
-    [self.cardCollectionView scrollToItemAtIndexPath:[indexPaths lastObject] atScrollPosition:UICollectionViewScrollPositionTop animated:YES];
-    
-    
+    if ([indexPaths count] == 3)
+    {
+        [self.cardCollectionView insertItemsAtIndexPaths:indexPaths];
+        [self.cardCollectionView scrollToItemAtIndexPath:[indexPaths lastObject] atScrollPosition:UICollectionViewScrollPositionTop animated:YES];
+    }
 }
 
 - (IBAction)flipCard:(UITapGestureRecognizer *)gesture
@@ -203,32 +202,30 @@
     if (indexPath) {
         [self.game flipCardAtIndex:indexPath.item];
         [self updateUI];
-        [self deleteUnplayableCardView];
-        self.gameResult.score = self.game.score;
-    
     }
 }
 
 - (void)deleteUnplayableCardView
 {
-    NSMutableArray *indexPaths = [NSMutableArray arrayWithCapacity:3];
-    for (SetGameCollectionViewCell *cell in [self.cardCollectionView visibleCells])
+    NSMutableArray *indexPathArray = [NSMutableArray array];
+    NSMutableArray *cards = [NSMutableArray array];
+
+    
+    for (int i = 0; i < [self.game.cards count];i++)
     {
-        if (cell.setCardView.isFaceUp)
-        {
-            NSIndexPath *indexPath = [self.cardCollectionView indexPathForCell:cell];
-            
-            [indexPaths addObject:indexPath];
+        Card *card = self.game.cards[i];
+        if (card.isUnplayable) {
+            NSIndexPath * indexPath = [NSIndexPath indexPathForItem:i inSection:0];
+            [indexPathArray addObject:indexPath];
+            [cards addObject:card];
         }
     }
     
-    
-    if ([indexPaths count] == 3) {
-        
-        [self.game removeUnplayableCards];
-        [self.cardCollectionView deleteItemsAtIndexPaths:indexPaths];
+    if ([cards count]) {
+        [self.game.cards removeObjectsInArray:cards];
+        [self.cardCollectionView deleteItemsAtIndexPaths:indexPathArray];
     }
-        
+    
 }
 
 

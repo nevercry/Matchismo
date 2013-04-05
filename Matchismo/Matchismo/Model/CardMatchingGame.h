@@ -25,7 +25,7 @@
 
 - (Card *)cardAtIndex:(NSUInteger)index;
 
-- (void)removeUnplayableCards;
+
 
 
 

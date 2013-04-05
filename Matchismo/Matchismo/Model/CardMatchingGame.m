@@ -47,16 +47,6 @@
     return (index < [self.cards count]) ? self.cards[index] : nil;
 }
 
-- (void)removeUnplayableCards
-{
-    NSMutableArray *unplayableCards = [NSMutableArray array];
-    for (Card *card in self.cards) {
-        if (card.isUnplayable) [unplayableCards addObject:card];
-    }
-    
-    
-    [self.cards removeObjectsInArray:unplayableCards];
-}
 
 
 

@@ -31,24 +31,24 @@
                                 </connections>
                             </button>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jNa-2q-btQ">
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.88233418367346939" green="0.88233418367346939" blue="0.88233418367346939" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ffF-GN-gld">
                                     <size key="itemSize" width="65" height="86"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="8" minY="8" maxX="8" maxY="8"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PlayingCard" id="d8d-8x-5XG" customClass="PlayingCardCollectionViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="65" height="86"/>
+                                        <rect key="frame" x="8" y="8" width="65" height="86"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="65" height="86"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GFr-iz-ofF" customClass="PlayingCardView">
-                                                    <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -268,33 +268,36 @@
                                 </connections>
                             </button>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AZd-NU-hPi">
-                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.91577891948091372" blue="0.82185094110070911" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="309" id="F3e-dk-N4F"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0om-6N-geC">
-                                    <size key="itemSize" width="62" height="95"/>
+                                    <size key="itemSize" width="90" height="83"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="8" maxX="8" maxY="4"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SetCard" id="60T-oM-Hg2" customClass="SetGameCollectionViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="62" height="95"/>
+                                        <rect key="frame" x="10" y="8" width="90" height="83"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="62" height="95"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="83"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vXB-AI-VUg" customClass="SetCardView">
+                                                <view opaque="NO" autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vXB-AI-VUg" customClass="SetCardView">
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="vXB-AI-VUg" firstAttribute="top" secondItem="60T-oM-Hg2" secondAttribute="top" type="default" id="DnG-79-LOJ"/>
-                                            <constraint firstItem="vXB-AI-VUg" firstAttribute="trailing" secondItem="60T-oM-Hg2" secondAttribute="trailing" type="default" id="EWU-Mo-K8E"/>
-                                            <constraint firstItem="vXB-AI-VUg" firstAttribute="bottom" secondItem="60T-oM-Hg2" secondAttribute="bottom" type="default" id="c8p-le-DZ9"/>
-                                            <constraint firstItem="vXB-AI-VUg" firstAttribute="leading" secondItem="60T-oM-Hg2" secondAttribute="leading" type="default" id="eqC-Td-11a"/>
+                                            <constraint firstItem="vXB-AI-VUg" firstAttribute="trailing" secondItem="60T-oM-Hg2" secondAttribute="trailing" type="default" id="63W-uZ-Bbv"/>
+                                            <constraint firstItem="vXB-AI-VUg" firstAttribute="leading" secondItem="60T-oM-Hg2" secondAttribute="leading" type="default" id="ElR-8z-TGN"/>
+                                            <constraint firstItem="vXB-AI-VUg" firstAttribute="top" secondItem="60T-oM-Hg2" secondAttribute="top" type="default" id="F3P-ho-7DI"/>
+                                            <constraint firstItem="vXB-AI-VUg" firstAttribute="bottom" secondItem="60T-oM-Hg2" secondAttribute="bottom" type="default" id="tGD-g6-sHa"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="setCardView" destination="vXB-AI-VUg" id="HP4-gr-run"/>
@@ -329,21 +332,21 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="71" id="gdv-We-Gwr"/>
-                                    <constraint firstAttribute="width" constant="195" type="user" id="tLD-gL-eUg"/>
+                                    <constraint firstAttribute="width" constant="156" id="pYA-t3-0hQ"/>
+                                    <constraint firstAttribute="height" constant="40" id="tnN-48-XY1"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9yh-gt-eHZ">
-                                    <size key="itemSize" width="46" height="64"/>
+                                    <size key="itemSize" width="43" height="38"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SelectedCard" id="hUm-dt-1h0" customClass="SetGameCollectionViewCell">
-                                        <rect key="frame" x="0.0" y="3" width="46" height="64"/>
+                                        <rect key="frame" x="0.0" y="1" width="43" height="38"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="46" height="64"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="43" height="38"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ULo-fn-Ami" customClass="SetCardView">
@@ -358,7 +361,7 @@
                                             <constraint firstItem="ULo-fn-Ami" firstAttribute="bottom" secondItem="hUm-dt-1h0" secondAttribute="bottom" type="default" id="OSP-8U-Y1u"/>
                                             <constraint firstItem="ULo-fn-Ami" firstAttribute="leading" secondItem="hUm-dt-1h0" secondAttribute="leading" type="default" id="uj6-WH-KoM"/>
                                         </constraints>
-                                        <size key="customSize" width="46" height="64"/>
+                                        <size key="customSize" width="43" height="38"/>
                                         <connections>
                                             <outlet property="setCardView" destination="ULo-fn-Ami" id="b6d-sp-4mI"/>
                                         </connections>
@@ -376,17 +379,16 @@
                             <constraint firstAttribute="bottom" secondItem="4Og-Sx-ql5" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="2W8-nq-0tW"/>
                             <constraint firstItem="e67-h5-N01" firstAttribute="centerY" secondItem="GTm-TZ-hwr" secondAttribute="centerY" type="default" id="FUP-r3-xKN"/>
                             <constraint firstItem="AZd-NU-hPi" firstAttribute="trailing" secondItem="Deo-pp-eTE" secondAttribute="trailing" type="default" id="HNo-R8-xcj"/>
+                            <constraint firstItem="GTm-TZ-hwr" firstAttribute="leading" secondItem="e67-h5-N01" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Ha6-Js-L9e"/>
+                            <constraint firstItem="e67-h5-N01" firstAttribute="top" secondItem="AZd-NU-hPi" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ISF-c8-F6I"/>
                             <constraint firstItem="6yY-ff-fZg" firstAttribute="leading" secondItem="Deo-pp-eTE" secondAttribute="leading" type="default" id="OxU-oy-odh"/>
+                            <constraint firstAttribute="bottom" secondItem="6yY-ff-fZg" secondAttribute="bottom" constant="47" id="PKs-dM-sYW"/>
                             <constraint firstAttribute="bottom" secondItem="TtE-rT-rs2" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Pfi-WH-fzW"/>
                             <constraint firstItem="AZd-NU-hPi" firstAttribute="leading" secondItem="Deo-pp-eTE" secondAttribute="leading" type="default" id="Tgj-dB-Mbu"/>
                             <constraint firstItem="4Og-Sx-ql5" firstAttribute="leading" secondItem="Deo-pp-eTE" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="VoW-EG-lip"/>
                             <constraint firstAttribute="trailing" secondItem="TtE-rT-rs2" secondAttribute="trailing" constant="20" symbolic="YES" type="user" id="Zdm-x3-AcI"/>
                             <constraint firstItem="AZd-NU-hPi" firstAttribute="top" secondItem="Deo-pp-eTE" secondAttribute="top" type="default" id="dY7-N6-9qe"/>
-                            <constraint firstItem="4Og-Sx-ql5" firstAttribute="top" secondItem="6yY-ff-fZg" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ec0-pM-k4J"/>
-                            <constraint firstItem="TtE-rT-rs2" firstAttribute="centerX" secondItem="GTm-TZ-hwr" secondAttribute="centerX" type="user" id="qtV-pF-2ec"/>
-                            <constraint firstItem="GTm-TZ-hwr" firstAttribute="leading" secondItem="e67-h5-N01" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="rhf-NH-bh6"/>
-                            <constraint firstItem="e67-h5-N01" firstAttribute="top" secondItem="AZd-NU-hPi" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="tOR-gC-VAY"/>
-                            <constraint firstItem="6yY-ff-fZg" firstAttribute="top" secondItem="AZd-NU-hPi" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="vgk-Yo-0KQ"/>
+                            <constraint firstAttribute="trailing" secondItem="GTm-TZ-hwr" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="lzG-WZ-gVc"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" tag="1" title="SetGame" image="Set.png" id="PiQ-vE-YIT"/>
@@ -419,6 +421,74 @@
         <image name="setting.png" width="30" height="30"/>
         <image name="spade.png" width="30" height="30"/>
     </resources>
+    <classes>
+        <class className="CardGameViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CardGameViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="deal"/>
+                <relationship kind="action" name="flipCard:" candidateClass="UITapGestureRecognizer"/>
+                <relationship kind="outlet" name="cardCollectionView" candidateClass="UICollectionView"/>
+                <relationship kind="outlet" name="resultLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="GameResultViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GameResultViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="display" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="GameSettingViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GameSettingViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PlayingCardCollectionViewCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayingCardCollectionViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="playingCardView" candidateClass="PlayingCardView"/>
+            </relationships>
+        </class>
+        <class className="PlayingCardGameViewController" superclassName="CardGameViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayingCardGameViewController.h"/>
+        </class>
+        <class className="PlayingCardView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayingCardView.h"/>
+        </class>
+        <class className="SetCardGameViewController" superclassName="CardGameViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SetCardGameViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addThreeCards:" candidateClass="UIButton"/>
+                <relationship kind="action" name="deselectedCard:" candidateClass="UITapGestureRecognizer"/>
+                <relationship kind="action" name="flipCard:" candidateClass="UITapGestureRecognizer"/>
+                <relationship kind="outlet" name="addCardButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="addCardLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="selectedCardview" candidateClass="UICollectionView"/>
+            </relationships>
+        </class>
+        <class className="SetCardView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SetCardView.h"/>
+        </class>
+        <class className="SetGameCollectionViewCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SetGameCollectionViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="setCardView" candidateClass="SetCardView"/>
+            </relationships>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
